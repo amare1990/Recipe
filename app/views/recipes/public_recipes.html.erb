@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Public Recipes</h1>
+
+<div id="recipes">
+  <%  @public_recipes.each do |public_recipe| %>
+      <div class="recipe-card">
+        <div class="recipe-name-user">
+          <h3>
+            <%= public_recipe.name %>
+          </h3>
+          <p>
+            By: <%= public_recipe.user.name %>
+          </p>
+        </div>
+        <div class="recipe-stat">
+          <p>
+            Total food items:
+          </p>
+          <p>
+            Total price:
+          </p>
+        </div>
+      </div>
+
+  <% end %>
+</div>

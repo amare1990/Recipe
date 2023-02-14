@@ -1,20 +1,16 @@
-<div
-  id="<%= dom_id recipe %>"
-  <% if recipe_show %>
-    <% recipeCardClass = "recipe-card recipe-card-show" %>
-  <% else %>
-    <% recipeCardClass = "recipe-card" %>
-  <% end %>
-  class="<%= recipeCardClass %>"
->
+<h1> Bingo! </h1>
+
+<div class="public-recipes-wrapper">
+
+  <p class="recipe-user">
+  Welcome guests!
+  By: <%= public_recipe.user.name %>
+  </p>
+
   <div class="recipe-card-top">
     <h2>
       <%= recipe.name %>
     </h2>
-    <% if recipe_index %>
-
-      <%= button_to "Delete", user_recipe_path(current_user, recipe), method: :delete, data: { confirm: "Are you sure?" }, class:"black-btn delete-recipe" %>
-    <% end %>
   </div>
 
   <div class="relative">
