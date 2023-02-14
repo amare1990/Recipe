@@ -2,9 +2,9 @@
 
 <%= render @recipe %>
 
-<div>
-  <%= link_to "Edit this recipe", edit_user_recipe_path(current_user, @recipe) %> |
-  <%= link_to "Back to recipes", user_recipes_path(current_user) %>
+<div class="show-links">
+  <%= link_to "Edit", edit_user_recipe_path(current_user, @recipe), class:"black-btn" %>
+  <%= link_to "Back", user_recipes_path(current_user), class:"black-btn" %>
 
-  <%= button_to "Destroy this recipe", user_recipe_path(current_user, @recipe), method: :delete %>
+  <%= button_to "Delete", user_recipe_path(current_user, @recipe), method: :delete, class:"black-btn" %>
 </div>

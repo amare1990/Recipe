@@ -2,13 +2,16 @@
 
 <h1>Recipes</h1>
 
+<div class="recipe-new-link">
+  <%= link_to "New", new_user_recipe_path(current_user), class:"black-btn" %>
+</div>
+
 <div id="recipes">
   <% @recipes.each do |recipe| %>
-    <%= render recipe %>
-    <p>
-      <%= link_to "Show this recipe", user_recipe_path(current_user, recipe) %>
-    </p>
+    <%= link_to user_recipe_path(current_user, recipe) do %>
+      <%= render recipe %>
+    <% end %>
   <% end %>
 </div>
 
-<%= link_to "New recipe", new_user_recipe_path() %>
+
