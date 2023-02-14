@@ -2,6 +2,12 @@
 
 <%= render @recipe %>
 
+<div id="recipe_foods">
+  <% @recipe_foods.each do |recipe_food| %>
+    <%= render partial: "recipe_foods/recipe_food" %>
+  <% end %>
+</div>
+
 <div class="show-links">
   <%= link_to "Edit", edit_user_recipe_path(current_user, @recipe), class:"black-btn" %>
   <%= link_to "Back", user_recipes_path(current_user), class:"black-btn" %>
