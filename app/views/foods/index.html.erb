@@ -1,14 +1,29 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Foods</h1>
+<div class="food-list-wrapper">
+  <%= link_to "Add Food", new_user_food_path(current_user), class: "add-food-link" %>
 
-<div id="foods">
-  <% @foods.each do |food| %>
-    <%= render food %>
-    <p>
-      <%= link_to "Show this food", user_food_path(current_user, food) %>
-    </p>
-  <% end %>
+  <div class="food-table-container">
+    <table class="food-table">
+      <tr class="table-header-row">
+        <th class="table-food-header">
+          <div class="food-cheveron-container">
+            Food  <i class='fa fa-chevron-up'> </i>
+          </div>
+        </th>
+        <th class="table-food-header"> measurement_unit </th>
+        <th class="table-food-header">Unit Price </th>
+        <th class="table-food-header">Actions </th>
+      </tr>
+
+
+    <div id="foods">
+      <% @foods.each do |food| %>
+        <%= render food %>
+      <% end %>
+    </div>
+
+    </table>
+  </div>
+
 </div>
-
-<%= link_to "New food", new_user_food_path(current_user) %>
