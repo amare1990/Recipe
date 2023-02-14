@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @recipe %>
+
+<div class="show-links">
+  <%= link_to "Edit", edit_user_recipe_path(current_user, @recipe), class:"black-btn" %>
+  <%= link_to "Back", user_recipes_path(current_user), class:"black-btn" %>
+
+  <%= button_to "Delete", user_recipe_path(current_user, @recipe), method: :delete, class:"black-btn" %>
+</div>

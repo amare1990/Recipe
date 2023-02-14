@@ -1,0 +1,56 @@
+<div 
+  id="<%= dom_id recipe %>"
+  <% if recipe_show %>
+    <% recipeCardClass = "recipe-card recipe-card-show" %>
+  <% else %>
+    <% recipeCardClass = "recipe-card" %>
+  <% end %>
+  class="<%= recipeCardClass %>"
+>
+  <div class="recipe-card-top">
+    <h2>
+      <%= recipe.name %>
+    </h2>
+    <% if recipe_index %>
+
+      <%= button_to "Delete", user_recipe_path(current_user, recipe), method: :delete, data: { confirm: "Are you sure?" }, class:"black-btn delete-recipe" %>
+    <% end %>
+  </div>
+
+  <div class="relative">
+    <% if recipe_show %>
+    <div class="recipe-card-info">
+      <p>
+        <strong>Preparation time:</strong>
+        <%= recipe.preparation_time %>
+      </p>
+
+      <p>
+        <strong>Cooking time:</strong>
+        <%= recipe.cooking_time %>
+      </p>
+    <% end %>
+
+    <p>
+      <strong>Description:</strong>
+      <%= recipe.description %>
+    </p>
+  
+  </div>
+    <% if recipe_show %>
+      <% recipe.public? ? recipeToggleBoxClass = "public-toggle-box public-true-box" : recipeToggleBoxClass = "public-toggle-box public-false-box" %>
+      <% recipe.public? ? recipeToggleSwitchClass = "public-toggle-switch public-true-switch" : recipeToggleSwitchClass = "public-toggle-switch public-false-switch" %>
+      <% recipe.public? ? recipeToggleSwitchText = "yes" : recipeToggleSwitchText = "no" %>
+      <div class="recipe-public">
+        <p>public<p>
+        <div class="<%= recipeToggleBoxClass %> " >
+          <%= form_with(model: [current_user, recipe]) do |f| %>
+            <%= f.hidden_field :public, value: !recipe.public %>
+            <%= f.submit "#{recipeToggleSwitchText}", class:"#{recipeToggleSwitchClass}" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+  
+</div>
