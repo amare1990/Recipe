@@ -1,9 +1,11 @@
 require 'faker'
 
 users = []
+foods = []
 recipes = []
 
-users.push(User.create!(name: 'Tiago', email: 'tiago.lelinski@gmail.com', password: '123321'))
+users.push(User.create(name: 'Amare', email: 'amare@test.com', password: '12345678'))
+users.push(User.create(name: 'Tiago', email: 'tiago.lelinski@gmail.com', password: '123456'))
 
 5.times do
   users.push(User.create do |user| 
@@ -13,6 +15,21 @@ users.push(User.create!(name: 'Tiago', email: 'tiago.lelinski@gmail.com', passwo
   end
   )
 end
+
+users.each do |user|
+  7.times do
+    foods.push(Food.create do |food|
+      food.name = Faker::Food.ingredient
+      food.measurement_unit = Faker::Food.metric_measurement
+      food.price = rand(0.1..16.0).round(2)
+      food.quantity = rand(0.1..16.0).round(2)
+      food.user_id = user.id
+    end
+    )
+  end
+end
+
+# recipe.preparation_time = rand(0.1..3.0)
 
 users.each do |user|
   7.times do
@@ -26,4 +43,3 @@ users.each do |user|
     end
   end
 end
-

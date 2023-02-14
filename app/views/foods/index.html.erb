@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="food-list-wrapper">
+  <%= link_to "Add Food", new_user_food_path(current_user), class: "add-food-link" %>
+
+  <div class="food-table-container">
+    <table class="food-table">
+      <tr class="table-header-row">
+        <th class="table-food-header">
+          <div class="food-cheveron-container">
+            Food  <i class='fa fa-chevron-up'> </i>
+          </div>
+        </th>
+        <th class="table-food-header"> measurement_unit </th>
+        <th class="table-food-header">Unit Price </th>
+        <th class="table-food-header">Actions </th>
+      </tr>
+
+
+    <div id="foods">
+      <% @foods.each do |food| %>
+        <%= render food %>
+      <% end %>
+    </div>
+
+    </table>
+  </div>
+
+</div>

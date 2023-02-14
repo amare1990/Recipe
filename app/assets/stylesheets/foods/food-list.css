@@ -1,0 +1,39 @@
+.food-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+  margin: 30px auto;
+  padding: 20px 50px;
+}
+
+.add-food-link {
+  align-self: flex-end;
+}
+
+.food-table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border: 2px solid #000;
+}
+
+.table-header-row {
+  background-color: #ccc;
+}
+
+.table-food-data,
+.table-food-header {
+  border-right: 1.5px solid #000;
+  text-align: left;
+  padding: 8px;
+}
+
+.table-data-row:nth-child(even) {
+  background-color: #eee;
+}
+
+.food-cheveron-container {
+  display: flex;
+  justify-content: space-between;
+}
