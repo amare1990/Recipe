@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  devise_scope :user do
-    root "recipes#index"
-  end
+    
+  root 'recipes#public_recipes'
 end
