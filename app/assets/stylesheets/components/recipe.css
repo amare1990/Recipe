@@ -134,6 +134,14 @@ h1 {
   right: 0;
 }
 
+.add-food-link {
+  margin: 0 auto;
+  text-align: center;
+  padding: 4px 8px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
 @media (min-width: 768px) {
   /* index */
   .recipe-card-info > * {

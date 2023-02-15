@@ -1,0 +1,20 @@
+    <tr class="table-data-row">
+
+      <td class="table-food-data">
+        <% ingredient_name = recipe_food.food.name %>
+        <%= link_to "#{ingredient_name}", user_recipe_recipe_food_path(current_user, @recipe, recipe_food) %>
+      </td>
+
+      <td class="table-food-data">
+        <%= recipe_food.food.measurement_unit %>
+      </td>
+
+    <td class="table-food-data">
+        <%= recipe_food.quantity %>
+      </td>
+
+      <td class="table-food-data">
+        <%= button_to "Delete", user_recipe_recipe_food_path(current_user, @recipe, recipe_food), method: :delete  %>
+      </td>
+
+    </tr>
