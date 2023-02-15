@@ -6,7 +6,7 @@
 
     <%= render "table_header" %>
 
-      <% @recipe_foods.each do |recipe_food| %>
+      <% @recipe_foods.includes(:food).each do |recipe_food| %>
         <%= render recipe_food %>
       <% end %>
 

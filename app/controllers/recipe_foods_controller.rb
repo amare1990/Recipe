@@ -8,7 +8,9 @@ class RecipeFoodsController < ApplicationController
   end
 
   # GET /recipe_foods/1 or /recipe_foods/1.json
-  def show; end
+  def show
+    @recipefoods = RecipeFood.includes(:food).where(recipe_id: params[:id])
+  end
 
   # GET /recipe_foods/new
   def new
@@ -75,7 +77,7 @@ class RecipeFoodsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def set_recipe
-    @recipe = Recipe.includes([:user]).find(params[:recipe_id])
+    @recipe = Recipe.find(params[:recipe_id])
     # @recipe = Recipe.where(user_id: currrent_user.id)
   end
 
