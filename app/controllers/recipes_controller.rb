@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
   def show; end
 
   def public_recipes
-    @public_recipes = Recipe.where(public: true)
+    @public_recipes = Recipe.includes(:user).where(public: true)
   end
 
   # GET /recipes/new
