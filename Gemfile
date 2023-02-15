@@ -80,4 +80,4 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Add bullet gem to resolve N+1 query problems
 
-gem 'bullet'
+gem 'bullet', group: 'development'
