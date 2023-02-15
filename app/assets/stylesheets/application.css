@@ -1,6 +1,7 @@
 @import "components/recipe.css";
 @import "components/food-list.css";
 @import "components/public-recipes.css";
+@import "components/nav-bar.css";
 
 *,
 *::before,
