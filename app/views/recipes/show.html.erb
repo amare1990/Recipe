@@ -3,8 +3,9 @@
 <%= render @recipe %>
 
 <div id="recipe_foods">
-  <% @recipe_foods.each do |recipe_food| %>
-    <%= render partial: "recipe_foods/recipe_food" %>
+  <%= render "recipe_foods/table_header" %>
+  <% @recipe.recipe_foods.each do |recipe_food| %>
+    <%= render partial: "recipe_foods/recipe_food", locals: {recipe_food: recipe_food} %>
   <% end %>
 </div>
 
