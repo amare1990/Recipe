@@ -41,5 +41,8 @@ users.each do |user|
       recipe.public = true
       recipe.user_id = user.id
     end
+    5.times do
+      RecipeFood.create(quantity: rand(0.1..16.0).round(2), recipe_id: user_recipe.id, food_id: foods[rand(34)].id)
+    end
   end
 end
