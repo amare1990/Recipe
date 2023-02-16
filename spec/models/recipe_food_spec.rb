@@ -20,7 +20,7 @@ RSpec.describe RecipeFood, type: :model do
     it "\n recipe to be present as a reference as recipe_id" do
       expect(@recipe_food1.recipe_id).to_not be_nil
     end
-  
+
     it 'quantity should be greater than 0' do
       @recipe_food1.quantity = 0
       expect(@recipe_food1).to_not be_valid
@@ -31,6 +31,5 @@ RSpec.describe RecipeFood, type: :model do
     it "\n The quantity of food Beyaynet should be equal to 2 \n " do
       expect(@recipe_food1.quantity).to eq(2)
     end
-
   end
 end
