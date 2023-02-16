@@ -1,0 +1,14 @@
+.shopping-list__table-wraper {
+  width: 70%;
+}
+
+.shopping-list__table-wraper > * {
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.shopping-list__table-wraper h1 {
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-align: center;
+}

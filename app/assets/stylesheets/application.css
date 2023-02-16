@@ -2,6 +2,7 @@
 @import "components/food-list.css";
 @import "components/public-recipes.css";
 @import "components/nav-bar.css";
+@import "components/shopping-list.css";
 
 *,
 *::before,
