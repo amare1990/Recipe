@@ -53,6 +53,7 @@ gem 'devise'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'capybara'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'faker'
   gem 'rspec-rails'
@@ -71,8 +72,6 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
-  # gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
@@ -82,3 +81,5 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 # Add bullet gem to resolve N+1 query problems
 
 gem 'bullet', group: 'development'
+gem 'database_cleaner'
+gem 'rails-controller-testing'
