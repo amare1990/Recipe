@@ -12,5 +12,13 @@ RSpec.describe User, type: :model do
       @user1.name = nil
       expect(@user1).to_not be_valid
     end
+    it "should not be valid if user doesn't have an email\n" do
+      @user1.email = nil
+      expect(@user1).to_not be_valid
+    end
+    it "should not be valid if user doesn't have an password\n" do
+      @user1.password = nil
+      expect(@user1).to_not be_valid
+    end
   end
 end
