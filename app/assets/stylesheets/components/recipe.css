@@ -29,7 +29,8 @@ h1 {
 .show-links {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
   gap: 10px;
   padding: 10px;
 }
@@ -76,8 +77,16 @@ h1 {
   right: 0;
 }
 
+.black-btn.new-recipe {
+  top: 60px;
+}
+
 .relative {
   position: relative;
+}
+
+.food-list-wrapper.show {
+  padding: 0;
 }
 
 .recipe-card-info {

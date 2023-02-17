@@ -10,8 +10,6 @@
 </div>
 
 <div class="show-links">
-  <%= link_to "Edit", edit_user_recipe_path(current_user, @recipe), class:"black-btn" %>
-  <%= link_to "Back", user_recipes_path(current_user), class:"black-btn" %>
-
-  <%= button_to "Delete", user_recipe_path(current_user, @recipe), method: :delete, class:"black-btn" %>
+  <%= link_to "Generate Shopping List", user_shopping_list_index_path(current_user), class:"black-btn" %>
+  <%= link_to "Add ingredient", new_user_recipe_recipe_food_path(current_user, @recipe), class:"black-btn" %>
 </div>
