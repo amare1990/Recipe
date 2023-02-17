@@ -17,7 +17,7 @@ users.push(User.create(name: 'Tiago', email: 'tiago.lelinski@gmail.com', passwor
 end
 
 users.each do |user|
-  7.times do
+  20.times do
     foods.push(Food.create do |food|
       food.name = Faker::Food.ingredient
       food.measurement_unit = Faker::Food.metric_measurement
@@ -42,7 +42,7 @@ users.each do |user|
       recipe.user_id = user.id
     end
     5.times do
-      RecipeFood.create(quantity: rand(0.1..16.0).round(2), recipe_id: user_recipe.id, food_id: foods[rand(34)].id)
+      RecipeFood.create(quantity: rand(0.1..16.0).round(2), recipe_id: user_recipe.id, food_id: user.foods[rand(20)].id)
     end
   end
 end

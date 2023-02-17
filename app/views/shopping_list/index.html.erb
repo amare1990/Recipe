@@ -7,9 +7,10 @@
     <thead>
       <tr class="table-header-row">
         <th class="table-food-header"> Ingredient </th>
-        <th class="table-food-header"> Quantity Needed </th>
+        <th class="table-food-header"> Price per unit </th>
         <th class="table-food-header">Measurement Unit </th>
-        <th class="table-food-header">Actions </th>
+        <th class="table-food-header">Quantity Needed </th>
+        <th class="table-food-header">Total</th>
       </tr>
     </thead>
     <tbody>
@@ -20,24 +21,30 @@
           </td>
 
           <td class="table-food-data">
+            <%= number_to_currency(ingredient.food.price) %>
+          </td>
+
+          <td class="table-food-data">
             <%= ingredient.food.measurement_unit %>
           </td>
 
           <td class="table-food-data">
-            <%= number_to_currency(ingredient.food.price) %>
+            <%= ingredient.quantity %>
           </td>
+
           <td class="table-food-data">
-            <%= button_to "Delete", user_food_path(current_user, ingredient.food_id), method: :delete  %>
+            <%= number_to_currency(ingredient.quantity * ingredient.food.price) %>
           </td>
         </tr>
       <% end %>
     </tbody>
     <tfoot>
-      <tr class="table-data-row">
+      <tr class="table-header-row">
           <td class="table-food-data">Total</td>
           <td class="table-food-data"></td>
-          <td class="table-food-data"><%= number_to_currency(@total_price) %></td>
           <td class="table-food-data"></td>
+          <td class="table-food-data"></td>
+          <td class="table-food-data"><%= number_to_currency(@total_price) %></td>
       </tr>
     </tfoot>
 
