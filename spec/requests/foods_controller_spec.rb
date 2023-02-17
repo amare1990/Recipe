@@ -1,10 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe 'FoodsControllers', type: :request do
-
   before(:each) do
     @user = User.create!(name: 'Amre5', email: 'em@blog.com', password: '12345678')
-    @food = Food.new(name: "shiro", measurement_unit: "unit", price: 1, quantity: 3)
+    @food = Food.new(name: 'shiro', measurement_unit: 'unit', price: 1, quantity: 3)
     # @user.save
     sign_in @user
     get '/users/1/foods'
@@ -20,6 +19,5 @@ RSpec.describe 'FoodsControllers', type: :request do
     it 'should include the Add Food text' do
       expect(response.body).to include('Add Food')
     end
-
   end
 end

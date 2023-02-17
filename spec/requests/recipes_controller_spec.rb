@@ -1,12 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'RecipesControllers', type: :request do
-
   describe 'GET #index' do
     before(:each) do
       @user = User.create!(name: 'Amre5', email: 'em@blog.com', password: '12345678')
-      @recipe = Recipe.new(name: "shiro aserar", preparation_time: 0.25, cooking_time: 1,
-      description: "shiro, salt, pepper, onion, potato", public: true, user_id: @user.id)
+      @recipe = Recipe.new(name: 'shiro aserar', preparation_time: 0.25, cooking_time: 1,
+                           description: 'shiro, salt, pepper, onion, potato', public: true, user_id: @user.id)
       # @user.save
       sign_in @user
       get '/users/1/recipes'
@@ -26,8 +25,8 @@ RSpec.describe 'RecipesControllers', type: :request do
   describe 'GET #show' do
     before(:each) do
       @user = User.create!(name: 'Amre5', email: 'em@blog.com', password: '12345678')
-      @recipe = Recipe.create(name: "shiro aserar", preparation_time: 0.25, cooking_time: 1,
-      description: "shiro, salt, pepper, onion, potato", public: true, user_id: @user.id)
+      @recipe = Recipe.create(name: 'shiro aserar', preparation_time: 0.25, cooking_time: 1,
+                              description: 'shiro, salt, pepper, onion, potato', public: true, user_id: @user.id)
       # @user.save
       sign_in @user
       get "/users/#{@user.id}/recipes/#{@recipe.id}"
