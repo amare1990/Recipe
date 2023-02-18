@@ -1,0 +1,34 @@
+@import "components/recipe.css";
+@import "components/food-list.css";
+@import "components/public-recipes.css";
+@import "components/nav-bar.css";
+@import "components/shopping-list.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+  background-color: var(--color-background);
+  color: var(--color-text-body);
+  line-height: var(--line-height-body);
+  font-family: var(--font-family-sans);
+}

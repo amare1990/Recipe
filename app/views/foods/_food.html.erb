@@ -1,0 +1,20 @@
+<tr class="table-data-row">
+
+  <td class="table-food-data">
+    <%= food.name %>
+  </td>
+
+  <td class="table-food-data">
+    <%= food.measurement_unit %>
+  </td>
+
+  <td class="table-food-data">
+    <%= food.price %>
+  </td>
+
+
+  <td class="table-food-data">
+    <%= button_to "Delete", user_food_path(current_user, food), method: :delete  %>
+  </td>
+
+</tr>

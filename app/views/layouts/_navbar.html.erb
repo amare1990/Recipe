@@ -1,0 +1,31 @@
+<nav class="nav__container">
+  <%= image_tag "icon.png", class:"nav__icon-logo" %>
+  <ul class="nav__links">
+    <% if current_user %>
+      <li>
+        <%= link_to "Shopping List", user_shopping_list_index_path(current_user) %>
+      </li>
+      <span> | </span>
+      <li>
+        <%= link_to "Public Recipes", root_path(current_user), class:"hidden" %>
+      </li>
+      <span class="hidden"> | </span>
+      <li>
+        <%= link_to "My Recipes", user_recipes_path(current_user) %>
+      </li>
+      <span> | </span>
+      <li>
+        <%= link_to "My Foods", user_foods_path(current_user) %>
+      </li>
+      <span> | </span>
+      <li>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+      </li>
+    <% else %>
+      <li> <%= link_to "Login", new_user_session_path%> </li>
+      <span> | </span>
+      <li> <%= link_to "Sign Up", new_user_registration_path%> </li>
+    <% end %>
+  </ul>
+</nav>
+

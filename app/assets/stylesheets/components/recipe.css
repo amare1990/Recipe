@@ -1,0 +1,201 @@
+/* INDEX view */
+h1 {
+  margin: 40px 0 20px 0;
+}
+
+.recipe-card > * {
+  width: 100%;
+}
+
+#recipes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 0 0 40px 0;
+}
+
+#recipes > * {
+  width: 90%;
+}
+
+.recipe-new-link {
+  position: absolute;
+  top: 50px;
+  right: 10%;
+}
+
+/* SHOW view */
+.show-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 10px;
+  padding: 10px;
+}
+
+/* _recipe PARTIAL */
+.recipe-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.recipe-card-show {
+  border: none;
+}
+
+.recipe-card-top {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+
+.recipe-card-top h2 {
+  width: 60%;
+  text-align: center;
+}
+
+.black-btn {
+  padding: 5px 8px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+}
+
+.black-btn.delete-recipe {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.black-btn.new-recipe {
+  top: 60px;
+}
+
+.relative {
+  position: relative;
+}
+
+.food-list-wrapper.show {
+  padding: 0;
+}
+
+.recipe-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.recipe-public {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.public-toggle-box {
+  height: 20px;
+  width: 35px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.public-true-box {
+  background-color: #ebf7fc;
+}
+
+.public-false-box {
+  background-color: #fcebeb;
+}
+
+.public-toggle-switch {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: none;
+  margin: 2.3px 4px;
+  font-size: 6px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.public-true-switch {
+  background-color: #03a9f4;
+  position: absolute;
+  left: 0;
+}
+
+.public-false-switch {
+  background-color: #f44336;
+  position: absolute;
+  right: 0;
+}
+
+.add-food-link {
+  margin: 0 auto;
+  text-align: center;
+  padding: 4px 8px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+  /* index */
+  .recipe-card-info > * {
+    width: 100%;
+  }
+
+  #recipes > * {
+    width: 80%;
+  }
+
+  /* _recipe PARTIAL */
+  .recipe-card {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 25px;
+  }
+
+  .recipe-card-show {
+    flex-direction: column;
+    width: 80%;
+    border: none;
+  }
+
+  .recipe-card-top {
+    width: 30%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .recipe-card-top h2 {
+    width: 80%;
+  }
+
+  .black-btn.delete-recipe {
+    position: relative;
+  }
+
+  .recipe-card-info-show {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
